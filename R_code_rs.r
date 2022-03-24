@@ -83,10 +83,20 @@ plot(l2011$B4_sre, col=clnir)
 plotRGB(l2011, r=4, g=3, b=2, stretch="lin")
 plotRGB(l2011, r=,3 g=4, b=2, stretch="lin")
     
-#    
-    par(mfrow=c(2,1))
+# confronto immagini
+par(mfrow=c(2,1))
 plotRGB(l2011, r=3, g=2, b=1, stretch="lin")
 plotRGB(l2011, r=3, g=4, b=2, stretch="hist")
 #exercise: upload the image from 1988
-l1988 <- brick("")
+l1988 <- brick("p224r63_1988.grd")
+# confronto immagini 2011 e 1988
+par(mfrow=c(2,1))
+plotRGB(l2011, r=4, g=3, b=2, stretch="lin")
+plotRGB(l1988, r=4, g=3, b=2, stretch="lin")
+
+    
+    
+    
+    
+    
   
