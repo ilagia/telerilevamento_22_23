@@ -57,6 +57,16 @@ par(mfrow=c(2,1))
 plot(ndvi1992, col=cl)
 plot(ndvi2006, col=cl)
 
+#install packages RStoolbox
+install.packages("RStoolbox")
+library(RStoolbox)
+si1992 <- spectralIndices(l1992,green=3, red=2, nir=1)
+plot(si1992, col=cl)
+plot(copndvi)
+
+
+
+
 
 
 
