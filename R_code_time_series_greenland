@@ -1,0 +1,28 @@
+# time series analysis of greenland lst data
+library(raster)
+setwd("C:/Users/Utente/Desktop/lab/")
+setwd("C:/Users/Utente/Desktop/lab/greenland/")
+lst2000 <- brick("lst_2000.tif")
+lst2000
+
+
+# Exercise: multiframe of greenland data
+cl <- colorRampPalette(c("blue","light blue","pink","red"))(100)
+ 
+par(mfrow=c(2,2))
+plot(lst2000, col=cl)
+plot(lst2005, col=cl)
+plot(lst2010, col=cl)
+plot(lst2015, col=cl)
+
+rlist <- list.files(pattern="lst")
+
+import <- lapply(rlist, raster)
+tgr <- stack(import)
+plot(tgr, col=cl) #per visualizzare tutte e 4 le immagini insieme con il colore desiderato
+plot(tgr[[1]], col=cl) #per vedere una sola immagine con il colore scelto
+plotRGB(tgr, r=1, g=2, b=3,stretch="lin")
+plotRGB(tgr, r=1, g=2, b=4,stretch="lin")
+
+
+
