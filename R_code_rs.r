@@ -2,7 +2,7 @@
 
 library(raster)
  
-# Settaggio cartella di lavoro
+# Set working directory
  setwd("C:/Users/Utente/Desktop/lab/") # windows
  
 # import
@@ -36,7 +36,7 @@ plot(l2011$B1_sre, col=cl)
 clb <- colorRampPalette(c("dark blue", "blue", "light blue")) (100)
 plot(l2011$B1_sre, col=clb) 
 
-#esportiamo l'immagine
+#export the image
 pdf("banda1.pdf")
 plot(l2011$B1_sre, col=clb)
 dev.off()
@@ -83,13 +83,13 @@ plot(l2011$B4_sre, col=clnir)
 plotRGB(l2011, r=4, g=3, b=2, stretch="lin")
 plotRGB(l2011, r=,3 g=4, b=2, stretch="lin")
     
-# confronto immagini
+# confrontation between the images
 par(mfrow=c(2,1))
 plotRGB(l2011, r=3, g=2, b=1, stretch="lin")
 plotRGB(l2011, r=3, g=4, b=2, stretch="hist")
 #exercise: upload the image from 1988
 l1988 <- brick("p224r63_1988.grd")
-# confronto immagini 2011 e 1988
+# confrontation between image 2011 and 1988
 par(mfrow=c(2,1))
 plotRGB(l2011, r=4, g=3, b=2, stretch="lin")
 plotRGB(l1988, r=4, g=3, b=2, stretch="lin")
