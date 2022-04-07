@@ -26,3 +26,37 @@ plotRGB(tgr, r=1, g=2, b=4,stretch="lin")
 
 
 
+
+#day2
+
+library(raster)
+setwd("C:/Users/Utente/Desktop/lab/EN/")
+en01 <- raster("EN_0001.png")
+cl <- colorRampPalette(c('red','orange','yellow'))(100)
+plot("en01, col=cl")
+en13 <- raster("EN_0013.png")
+plot("en13, col=cl")
+
+#let's import the whole set (altogether)
+rlist <- list.files(pattern="EN")
+rimp <- lapply(rlist, raster)
+en <- stack(rimp)
+
+#exercise: plot element 1 biside element 13
+par(mfrow=c(1,2))
+plot(en[[1]], col=cl)
+
+or
+
+en113 <- stack(en[[1]], en[[13]])
+plot(en113, col=cl)
+
+#let's make the difference
+difen <- en[[1]] - en[[13]]
+cldif <- colorRampPalette(c('blue','white','red'))(100)
+plot(difen, col=cldif)
+plot(en[[13]], col=cl)
+
+
+
+
