@@ -37,7 +37,7 @@ en01 <- raster("EN_0001.png")
 cl <- colorRampPalette(c('red','orange','yellow'))(100)
 plot("en01, col=cl")
 en13 <- raster("EN_0013.png")
-plot("en13, col=cl")
+plot(en13, col=cl)
 
 #let's import the whole set (altogether)
 rlist <- list.files(pattern="EN")
