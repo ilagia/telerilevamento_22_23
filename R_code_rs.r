@@ -81,7 +81,7 @@ plot(l2011$B4_sre, col=clnir)
     
 #inseriamo la banda a infrarossi
 plotRGB(l2011, r=4, g=3, b=2, stretch="lin")
-plotRGB(l2011, r=,3 g=4, b=2, stretch="lin")
+plotRGB(l2011, r=3, g=4, b=2, stretch="lin")
     
 # confrontation between the images
 par(mfrow=c(2,1))
