@@ -62,7 +62,15 @@ install.packages("RStoolbox")
 library(RStoolbox)
 si1992 <- spectralIndices(l1992,green=3, red=2, nir=1)
 plot(si1992, col=cl)
-plot(copndvi)
+# Automatic spectral indices by the spectralIndices function
+si1992 <- spectralIndices(l1992, green=3, red=2, nir=1)
+plot(si1992,col=cl)
+si2006 <- spectralIndices(l2006, green=3, red=2, nir=1)
+plot(si2006,col=cl)
+
+### rasterdiv
+# plot(copNDVI)
+
 
 
 
