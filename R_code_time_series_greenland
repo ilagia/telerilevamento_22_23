@@ -59,6 +59,16 @@ cldif <- colorRampPalette(c('blue','white','red'))(100)
 plot(difen, col=cldif)
 plot(en[[13]], col=cl)
 
+#day3
 
+ setwd("C:/Users/Utente/Desktop/lab/EN/")
+> rlist <- list.files(pattern="EN")
+> rimp <- lapply(rlist, raster)
+> en <- stack(rimp)
+> plot(en)
+> cl <- colorRampPalette(c('red','orange','yellow'))(100)
+> plot(en, col=cl)
+> plotRGB(en, r=1, g=7, b=13, stretch="lin")
+> plotRGB(en, r=1, g=7, b=13, stretch="hist")
 
 
